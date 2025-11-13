@@ -1,0 +1,133 @@
+TransPort Project
+	Data Gathering
+		Core Data Categories
+			Public Transit Investment
+				the treatment
+					rail_km_built
+					fleet_size
+					transit_investment_gdp
+					brt_km
+			Transport Usage & Behavior
+				the mechanism
+					modal_share_public
+					farebox_recovery
+					trips_per_capita
+			Traffic & Congest
+				main outcoume
+					congestion_index
+					avg_speed_kph
+					travel_time_index
+			Economic Indicators
+				confounders + outcomes
+					gdp_per_capita
+					unemployment
+					productivity
+			Environmental Quality
+				co-outcomes
+					pm23
+					co2_transport
+					noise_level
+			Infrastructure & Urban Form
+				confounders
+					road_density
+					rail_density
+					population_density
+					urban_area_km2
+			Policy & Governance
+				effect modifiers
+					transit_funding_law
+					execution_score
+					corruption_index
+		Full Data Dictionary
+		Data Sources
+		Strategy
+			Phase 1
+				Global Panel
+					Goal
+						50 Countries, 2000 - 2024
+			Phase 2
+				Philippines Deep Dive
+					Goal
+						Metro Manila
+			Phase 3
+				Treatment Proxies
+					Goal
+						Estimate transit_investment_gdp
+		Web Scraping
+		Datasets
+	Data Preparation
+		load and inspect raw data
+			what to look for
+				Duplicate data
+				Wrong dtypes (year as string?)
+				Outliers
+				country name mistmatches
+		Standardize Country & Year
+			Country Map
+				example
+					Philippines
+						PH
+						Republic of the Philippines
+			year
+				between 2000 -2024
+		Handle Missing Values
+			variable types
+				Time-invariant (e.g. country)
+				Smooth Trends (GDP, Population)
+				Sparse (modal share, rail_km)
+				missing
+		Feature Engineering
+			New Variable
+				log_gdp_per_capita
+				log_population
+				transit_invest_dummy
+				high_invest_dummy
+				urbanization_rate
+				road_per_capita
+		Outliter Detection & Winsorization
+			Cap extreme values at 99th percentile
+		Panel Balance Check
+			How many years per country?
+				Keep only countries with >= 10 years
+		Train-Test Split (TIme Based)
+			Use 2020-2024 as holdout (for simulation)
+		Filan Clean Panel Structure
+			country,year,transit_investment_gdp,modal_share_public,congestion_index,
+			gdp_per_capita,pm25,population_density,log_gdp_per_capita,
+			transit_invest_lag1,high_invest_dummy
+		Validation: Visual Sanity Checks
+			1. Time trend
+			2. Scatter: Investment vs Congestion
+		Save Final Clean Dataset
+	Full EDA & Causal Pipeline
+		Univariate & Missingness
+			Plot Distributions
+		Time Trends per Country
+			What to look for?
+				example
+					Singapore
+						Congestion ↓ after 2010 → MRT Line 4?
+					Bogota
+						Drop after 2000 → TransMilenio?
+					Philippines
+						Flat or rising → no major investment?
+		Correlation & Clustering
+			Hierarchical Clustering (Find Similar Countries)
+		Scatter + Loess
+		Causal Graph (DoWhy)
+		Identification Check
+		Causal Modeling
+			Load Clean Data
+				Define
+					Treatment
+					Outcome
+					Confounders
+	SImulation
+		Deep Counterfactual Simulation
+			Prepare Time Series Dataset
+				Traint TFT
+					Simulate
+						Save
+		Dashboard
+			Build Interactive Streamlit App
+		Validation
