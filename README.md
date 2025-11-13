@@ -86,7 +86,7 @@ TransPort-PH/
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/TransPort-PH.git
+git clone https://github.com/Acteus/TransPort-PH.git
 cd TransPort-PH
 ```
 
@@ -177,12 +177,12 @@ graph LR
 6. **Sensitivity Analysis**: Robustness checks
 7. **Model Comparison**: Performance benchmarking
 
-## 📈 Key Results
+## Key Results
 
 ### Data Coverage
-- ✅ **7,430 observations** (up from 117, 58x improvement)
-- ✅ **275 countries/regions** (up from 13, 21x improvement)
-- ✅ **100% panel coverage** (up from 1.6%, 63x improvement)
+- **7,430 observations** (up from 117, 58x improvement)
+- **275 countries/regions** (up from 13, 21x improvement)
+- **100% panel coverage** (up from 1.6%, 63x improvement)
 
 ### Model Performance
 - TFT Model achieves **0.24 validation loss** (QuantileLoss)
@@ -194,18 +194,18 @@ graph LR
 - Effects vary by country income level and urbanization
 - Air quality improvements linked to public transport expansion
 
-## 🎨 Interactive Dashboard
+## Interactive Dashboard
 
 The Streamlit dashboard provides:
 
-1. **📊 Data Quality**: Visualize data improvements and coverage
-2. **🔍 Exploratory Analysis**: Interactive plots and statistics
-3. **🎯 Policy Simulator**: Test different policy scenarios
-4. **📈 Model Performance**: View training metrics and predictions
-5. **🌍 Country Comparison**: Compare outcomes across countries
-6. **📉 Sensitivity Analysis**: Explore model robustness
+1. **Data Quality**: Visualize data improvements and coverage
+2. **Exploratory Analysis**: Interactive plots and statistics
+3. **Policy Simulator**: Test different policy scenarios
+4. **Model Performance**: View training metrics and predictions
+5. **Country Comparison**: Compare outcomes across countries
+6. **Sensitivity Analysis**: Explore model robustness
 
-## 🛠️ Development
+## Development
 
 ### Running Individual Scripts
 
@@ -272,14 +272,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - PyTorch Forecasting team for the TFT implementation
 - DoWhy team for causal inference framework
 - Streamlit team for the dashboard framework
-
-## Contact
-
-For questions, suggestions, or collaborations:
-
-- **Project Lead**: [Your Name]
-- **Email**: [your.email@example.com]
-- **GitHub**: [https://github.com/yourusername/TransPort-PH](https://github.com/yourusername/TransPort-PH)
+- I am so limited by data
 
 ## Citation
 
